@@ -26,6 +26,8 @@ const validate = values => {
     errors.npiNumber = 'Required';
   } else if(!/^\d+$/.test(values.npiNumber)){
     errors.npiNumber = 'Must only contain numeric values';
+  } else if(values.npiNumber.length !== 10) {
+    errors.npiNumber = 'NPI Number must be exactly 10 digits';
   }
 
   if (!values.address1) {
@@ -42,7 +44,7 @@ const validate = values => {
 
   if (!values.zip) {
     errors.zip = 'Required';
-  } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.zip)) {
+  } else if (!/^\d+$/.test(values.zip)) {
     errors.zip = 'Must only contain numeric values';
   }
 
@@ -71,7 +73,7 @@ const RegisterForm = () => {
       },
       validate,
       onSubmit: values => {
-        //usually I would send results to a backend here, I like to use an axio wrapper in my vue apps
+        //usually I would send results to a backend here, I like to use an axios wrapper in my vue apps
         alert(JSON.stringify(values, null, 2));
       },
     });
