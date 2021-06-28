@@ -11,3 +11,21 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.provider-reg-form {
+  margin-top: 25px;
+}
+
+#final-submit {
+  margin-top: 10px;
+}
+
+.form-group {
+  margin-bottom: 10px;
+}
+    
+.validation-error {
+  color:red;
+}
+
+
